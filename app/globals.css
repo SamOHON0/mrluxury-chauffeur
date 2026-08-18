@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand tokens: preserved from the existing MR Luxury identity (near-black + gold) */
+  --color-ink-950: #0c0c0e;
+  --color-ink-900: #121215;
+  --color-ink-800: #1a1a1f;
+  --color-ink-700: #26262d;
+  --color-ink-400: #8a8a93;
+  --color-ink-200: #c9c9cf;
+  --color-ink-100: #e8e8ec;
+  --color-gold-500: #c8a35a;
+  --color-gold-400: #d6b878;
+  --color-gold-600: #a9853f;
+
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-manrope);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-ink-100);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-gold-500);
+  color: var(--color-ink-950);
+}
