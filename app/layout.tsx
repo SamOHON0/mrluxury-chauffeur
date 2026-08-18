@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import IntroOverlay from "@/components/IntroOverlay";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
       <body>
+        <IntroOverlay />
         <Nav />
         <main>{children}</main>
         <Footer />

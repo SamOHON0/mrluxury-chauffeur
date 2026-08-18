@@ -121,6 +121,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Airport transfers: split feature */}
+      <section className="py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-2 md:px-8">
+          <Reveal>
+            <div className="relative aspect-[5/4] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/airport.jpeg"
+                alt="EQS SUV at the airport at sunset"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="font-display text-3xl text-ink-100 md:text-4xl">
+              Landings, handled
+            </h2>
+            <p className="mt-4 max-w-md leading-relaxed text-ink-400">
+              Your flight is tracked, your chauffeur waits in arrivals, and the
+              car is already cool or warm before you reach it. Dublin Airport to
+              any address in Ireland.
+            </p>
+            <Link
+              href="/book"
+              className="mt-7 inline-block rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-ink-950 transition-colors hover:bg-gold-400"
+            >
+              Book Now
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Fleet band: full-width image with overlay copy */}
       <section className="relative">
         <div className="relative h-[70vh] min-h-[480px] w-full">

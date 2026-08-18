@@ -40,29 +40,27 @@ export default function FleetPage() {
           </div>
         </Reveal>
 
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <Reveal>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image
-                src={IMAGES.interior}
-                alt="EQS SUV interior"
-                fill
-                sizes="(max-width: 768px) 100vw, 600px"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image
-                src={IMAGES.detail}
-                alt="EQS SUV detail"
-                fill
-                sizes="(max-width: 768px) 100vw, 600px"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { src: "/images/interior.jpeg", alt: "EQS SUV cockpit and steering wheel" },
+            { src: "/images/interior-3.jpeg", alt: "EQS SUV dashboard with ambient lighting" },
+            { src: "/images/rear-seats.jpeg", alt: "EQS SUV rear passenger seats" },
+            { src: "/images/interior-2.jpeg", alt: "EQS SUV front cabin in cream leather" },
+            { src: "/images/studio-side.jpeg", alt: "EQS SUV side profile" },
+            { src: "/images/studio-rear.jpeg", alt: "EQS SUV rear view" },
+          ].map((img, i) => (
+            <Reveal key={img.src} delay={i * 0.05}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
+          ))}
         </div>
 
         <Reveal className="mt-16 text-center">
