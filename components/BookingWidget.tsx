@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { WhatsappLogo, MapPin } from "@phosphor-icons/react";
 import { FLAT_ROUTES, HOURLY, FARE_NOTE, type RateMode } from "@/lib/pricing";
 import { whatsappLink } from "@/lib/site";
+import LocationInput from "@/components/LocationInput";
 
 const TABS: { id: RateMode; label: string }[] = [
   { id: "distance", label: "Distance" },
@@ -51,7 +52,8 @@ export default function BookingWidget() {
         (from || to) + ", Ireland"
       )}&output=embed`;
     }
-    return "https://www.google.com/maps?q=Dublin,+Ireland&output=embed";
+    // Default view: the whole of Ireland, zoomed out
+    return "https://www.google.com/maps?q=Ireland&z=6&output=embed";
   }, [mode, route, mapFrom, mapTo]);
 
   const summary = useMemo(() => {
@@ -151,24 +153,24 @@ export default function BookingWidget() {
             </div>
           ) : (
             <>
-              <div>
-                <label htmlFor="bk-pickup" className={labelCls}>Pickup location</label>
-                <input id="bk-pickup" type="text" required placeholder="e.g. Dublin Airport, Terminal 2"
-                  value={pickup}
-                  onChange={(e) => setPickup(e.target.value)}
-                  onBlur={() => setMapFrom(pickup)}
-                  className={inputCls} />
-              </div>
-              <div>
-                <label htmlFor="bk-dropoff" className={labelCls}>
-                  {mode === "hourly" ? "Starting point" : "Drop-off location"}
-                </label>
-                <input id="bk-dropoff" type="text" required placeholder="e.g. The Shelbourne, St Stephen's Green"
-                  value={dropoff}
-                  onChange={(e) => setDropoff(e.target.value)}
-                  onBlur={() => setMapTo(dropoff)}
-                  className={inputCls} />
-              </div>
+              <LocationInput
+                id="bk-pickup"
+                label="Pickup location"
+                placeholder="e.g. Dublin Airport, Terminal 2"
+                required
+                value={pickup}
+                onChange={setPickup}
+                onCommit={setMapFrom}
+              />
+              <LocationInput
+                id="bk-dropoff"
+                label={mode === "hourly" ? "Starting point" : "Drop-off location"}
+                placeholder="e.g. The Shelbourne, St Stephen's Green"
+                required
+                value={dropoff}
+                onChange={setDropoff}
+                onCommit={setMapTo}
+              />
             </>
           )}
 
