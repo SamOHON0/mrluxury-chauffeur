@@ -269,7 +269,23 @@ export default function BookingWidget() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
-        <p className="px-5 py-3 text-xs text-ink-400">{FARE_NOTE}</p>
+        <div className="flex items-center gap-4 border-t border-white/5 px-5 py-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/studio-side.jpeg"
+            alt="Mercedes-Benz EQS SUV"
+            className="h-12 w-20 rounded-lg object-cover"
+          />
+          <div>
+            <p className="text-sm font-semibold text-ink-100">
+              Mercedes-Benz EQS SUV
+            </p>
+            <p className="text-xs text-ink-400">Fully electric, seats 4</p>
+          </div>
+        </div>
+        <p className="border-t border-white/5 px-5 py-3 text-xs text-ink-400">
+          {FARE_NOTE}
+        </p>
       </aside>
     </div>
   );

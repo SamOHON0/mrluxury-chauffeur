@@ -63,6 +63,44 @@ export default function FleetPage() {
           ))}
         </div>
 
+        {/* Spec cards: name, value, why it matters */}
+        <div className="mt-16 grid gap-6 sm:grid-cols-2">
+          {[
+            {
+              k: "Power",
+              v: "Fully electric",
+              why: "Zero tailpipe emissions and near-silent at any speed.",
+            },
+            {
+              k: "Passengers",
+              v: "Seats 4",
+              why: "Space for four adults without anyone compromising.",
+            },
+            {
+              k: "Luggage",
+              v: "4 large cases",
+              why: "Full-size cases in the boot, hand luggage in the cabin.",
+            },
+            {
+              k: "Cabin",
+              v: "Nappa leather",
+              why: "Cream leather, ambient lighting and rear seat controls.",
+            },
+          ].map((s, i) => (
+            <Reveal key={s.k} delay={i * 0.05}>
+              <div className="rounded-2xl border border-white/10 bg-ink-900 p-7">
+                <p className="text-xs font-semibold text-ink-400">{s.k}</p>
+                <p className="font-display mt-2 text-2xl text-gold-400">
+                  {s.v}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-ink-400">
+                  {s.why}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
         <Reveal className="mt-16 text-center">
           <Link
             href="/book"

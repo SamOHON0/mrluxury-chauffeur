@@ -39,6 +39,11 @@ Submissions go to `/api/quote`:
 - Images are hotlinked from the existing Wix CDN (`lib/site.ts`). Get the original photos from the client and move them to `public/images` before the Wix site is cancelled, or they disappear.
 - Email delivery needs a free Resend account (resend.com) and a verified domain.
 
+## Content to confirm with the client
+
+- FAQ answers (`components/FAQ.tsx`) are written deliberately general. Confirm actual policies: cancellation terms, payment methods, child seats, coverage.
+- Testimonials are NOT included yet. Pull real Google/WhatsApp reviews from MR and add a reviews section rather than inventing quotes.
+
 ## Phase 2 (not built yet)
 
 - Google Places autocomplete + Distance Matrix auto-fares for the Distance tab (`NEXT_PUBLIC_GOOGLE_MAPS_KEY` is already plumbed in `.env.example`)

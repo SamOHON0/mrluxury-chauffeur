@@ -19,7 +19,7 @@ export default function Footer() {
           <p className="mb-3 font-semibold text-ink-200">Explore</p>
           <ul className="space-y-2 text-ink-400">
             <li><Link href="/fleet" className="hover:text-gold-400">Fleet</Link></li>
-            <li><Link href="/#services" className="hover:text-gold-400">Services</Link></li>
+            <li><Link href="/services" className="hover:text-gold-400">Services</Link></li>
             <li><Link href="/book" className="hover:text-gold-400">Book Now</Link></li>
             <li><Link href="/contact" className="hover:text-gold-400">Contact</Link></li>
           </ul>

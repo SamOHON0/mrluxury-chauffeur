@@ -9,6 +9,7 @@ import {
   ShieldCheck,
 } from "@phosphor-icons/react/dist/ssr";
 import Reveal from "@/components/Reveal";
+import FAQ from "@/components/FAQ";
 import { IMAGES, whatsappLink } from "@/lib/site";
 
 const SERVICES = [
@@ -228,8 +229,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="border-t border-white/5 bg-ink-900 py-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <Reveal>
+            <h2 className="font-display text-center text-3xl text-ink-100 md:text-4xl">
+              Good questions
+            </h2>
+          </Reveal>
+          <div className="mt-12">
+            <FAQ />
+          </div>
+        </div>
+      </section>
+
       {/* CTA band */}
-      <section className="border-t border-white/5 bg-ink-900 py-20 text-center">
+      <section className="border-t border-white/5 py-20 text-center">
         <Reveal>
           <h2 className="font-display text-3xl text-ink-100 md:text-4xl">
             Your chauffeur is a minute away

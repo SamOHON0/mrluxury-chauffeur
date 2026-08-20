@@ -31,12 +31,35 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "MR Luxury Chauffeur",
+  description:
+    "Private chauffeur service in Dublin in a fully electric Mercedes-Benz EQS SUV. Airport transfers, corporate travel, weddings and private tours of Ireland.",
+  url: "https://www.mrluxurychauffeur.com",
+  telephone: "+353896138243",
+  email: "m.rahmann198929@gmail.com",
+  image: "https://www.mrluxurychauffeur.com/images/hero.jpeg",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dublin",
+    addressCountry: "IE",
+  },
+  areaServed: "Ireland",
+  priceRange: "$$$",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <IntroOverlay />
         <Nav />
         <main>{children}</main>
