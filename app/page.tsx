@@ -66,13 +66,13 @@ export default function Home() {
         <div className="relative mx-auto flex min-h-[100dvh] max-w-7xl items-center px-4 pt-16 md:px-8 md:pt-[72px]">
           <Reveal>
             <h1 className="font-display text-4xl leading-tight text-ink-100 md:text-5xl lg:text-6xl">
-              Dublin, driven
+              Private chauffeur
               <br />
-              in <span className="text-gold-500">silence.</span>
+              service, <span className="text-gold-500">Dublin.</span>
             </h1>
             <p className="mt-5 max-w-md text-base leading-relaxed text-ink-200">
-              Private chauffeur travel in a fully electric Mercedes-Benz EQS
-              SUV. First class, without the noise.
+              A fully electric Mercedes-Benz EQS SUV, a professional chauffeur,
+              and every detail handled.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
@@ -186,46 +186,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How it works: vertical, no cards */}
+      {/* How it works: steps beside the car */}
       <section className="py-24">
-        <div className="mx-auto max-w-3xl px-4 md:px-8">
-          <Reveal>
-            <h2 className="font-display text-center text-3xl text-ink-100 md:text-4xl">
-              Booked in a minute
-            </h2>
-          </Reveal>
-          <div className="mt-14 space-y-10">
-            {[
-              {
-                t: "Request",
-                b: "Choose your route, date and time. Instant estimates for hourly hire and set routes.",
-              },
-              {
-                t: "Confirm",
-                b: "We confirm your chauffeur and final price by email or WhatsApp within the hour.",
-              },
-              {
-                t: "Travel",
-                b: "Your chauffeur arrives early, tracks your flight if needed, and handles the rest.",
-              },
-            ].map((step, i) => (
-              <Reveal key={step.t} delay={i * 0.08}>
-                <div className="flex gap-6">
-                  <span className="font-display text-4xl text-gold-500/60">
-                    {i + 1}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-semibold text-ink-100">
-                      {step.t}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-400">
-                      {step.b}
-                    </p>
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2 md:px-8">
+          <div>
+            <Reveal>
+              <h2 className="font-display text-3xl text-ink-100 md:text-4xl">
+                Booked in a minute
+              </h2>
+            </Reveal>
+            <div className="mt-12 space-y-10">
+              {[
+                {
+                  t: "Request",
+                  b: "Choose your route, date and time. Every journey is quoted personally within the hour.",
+                },
+                {
+                  t: "Confirm",
+                  b: "We confirm your chauffeur and final price by email or WhatsApp.",
+                },
+                {
+                  t: "Travel",
+                  b: "Your chauffeur arrives early, tracks your flight if needed, and handles the rest.",
+                },
+              ].map((step, i) => (
+                <Reveal key={step.t} delay={i * 0.08}>
+                  <div className="flex gap-6">
+                    <span className="font-display text-4xl text-gold-500/60">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-semibold text-ink-100">
+                        {step.t}
+                      </h3>
+                      <p className="mt-1 max-w-md text-sm leading-relaxed text-ink-400">
+                        {step.b}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              ))}
+            </div>
           </div>
+          <Reveal delay={0.1}>
+            <div className="relative aspect-[8/5] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/fleet-hero.jpeg"
+                alt="Mercedes-Benz EQS SUV outside the showroom"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 

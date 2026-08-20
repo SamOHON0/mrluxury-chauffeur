@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import { IMAGES } from "@/lib/site";
 import { VEHICLES } from "@/lib/pricing";
 
 export const metadata: Metadata = {
@@ -30,8 +29,8 @@ export default function FleetPage() {
         <Reveal className="mt-12">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={IMAGES.heroEqs}
-              alt="Mercedes-Benz EQS SUV exterior"
+              src="/images/fleet-hero.jpeg"
+              alt="Mercedes-Benz EQS SUV outside the showroom"
               fill
               priority
               sizes="(max-width: 768px) 100vw, 1200px"
