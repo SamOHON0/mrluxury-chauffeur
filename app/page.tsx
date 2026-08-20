@@ -56,14 +56,16 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right"
+          className="object-cover object-[68%_center] md:object-right"
         />
-        {/* Left-to-right fade: solid black over the copy, clear over the car */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-950 from-15% via-ink-950/75 via-45% to-transparent" />
+        {/* Mobile: bottom-to-top fade, car visible up top, copy on the dark base */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-950 from-25% via-ink-950/60 via-55% to-ink-950/15 md:hidden" />
+        {/* Desktop: left-to-right fade, solid black over the copy, clear over the car */}
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-ink-950 from-15% via-ink-950/75 via-45% to-transparent md:block" />
         {/* Bottom anchor so the section settles into the page below */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink-950 to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[100dvh] max-w-7xl items-center px-4 pt-16 md:px-8 md:pt-[72px]">
+        <div className="relative mx-auto flex min-h-[100dvh] max-w-7xl items-end px-4 pb-20 pt-16 md:items-center md:px-8 md:pb-0 md:pt-[72px]">
           <Reveal>
             <h1 className="font-display text-4xl leading-tight text-ink-100 md:text-5xl lg:text-6xl">
               Private chauffeur
