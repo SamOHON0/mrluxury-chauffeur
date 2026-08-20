@@ -48,16 +48,29 @@ const SERVICES = [
 export default function Home() {
   return (
     <>
-      {/* Hero: asymmetric split, copy left, EQS right */}
-      <section className="relative min-h-[100dvh] overflow-hidden pt-16 md:pt-[72px]">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:min-h-[calc(100dvh-72px)] md:grid-cols-[5fr_6fr] md:px-8 md:py-0">
+      {/* Hero: full-bleed image, black on the left fading into the car on the right */}
+      <section className="relative min-h-[100dvh] overflow-hidden">
+        <Image
+          src={IMAGES.heroEqs}
+          alt="Mercedes-Benz EQS SUV, MR Luxury Chauffeur"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-right"
+        />
+        {/* Left-to-right fade: solid black over the copy, clear over the car */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-950 from-15% via-ink-950/75 via-45% to-transparent" />
+        {/* Bottom anchor so the section settles into the page below */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink-950 to-transparent" />
+
+        <div className="relative mx-auto flex min-h-[100dvh] max-w-7xl items-center px-4 pt-16 md:px-8 md:pt-[72px]">
           <Reveal>
             <h1 className="font-display text-4xl leading-tight text-ink-100 md:text-5xl lg:text-6xl">
               Dublin, driven
               <br />
               in <span className="text-gold-500">silence.</span>
             </h1>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-ink-400">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-ink-200">
               Private chauffeur travel in a fully electric Mercedes-Benz EQS
               SUV. First class, without the noise.
             </p>
@@ -72,23 +85,10 @@ export default function Home() {
                 href={whatsappLink("Hi, I'd like to enquire about a chauffeur booking.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/15 px-7 py-3 text-sm font-semibold text-ink-100 transition-colors hover:border-gold-500 hover:text-gold-400"
+                className="rounded-full border border-white/25 bg-ink-950/40 px-7 py-3 text-sm font-semibold text-ink-100 backdrop-blur-sm transition-colors hover:border-gold-500 hover:text-gold-400"
               >
                 WhatsApp Us
               </a>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.15} className="relative">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl md:aspect-[7/6]">
-              <Image
-                src={IMAGES.heroEqs}
-                alt="Mercedes-Benz EQS SUV, MR Luxury Chauffeur"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 55vw"
-                className="object-cover"
-              />
             </div>
           </Reveal>
         </div>
