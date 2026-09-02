@@ -49,12 +49,12 @@ export default function ServicesPage() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <Reveal>
           <h1 className="font-display text-4xl text-ink-100 md:text-5xl">
-            One car, every <span className="text-gold-500">journey</span>
+            Every journey, <span className="text-gold-500">handled</span>
           </h1>
           <p className="mt-4 max-w-lg text-ink-400">
-            Every service is delivered in the same fully electric Mercedes-Benz
-            EQS SUV, by a chauffeur who plans the details before you think of
-            them.
+            From the fully electric EQS SUV to the seven-seat V-Class, every
+            service is delivered by a chauffeur who plans the details before
+            you think of them.
           </p>
         </Reveal>
 

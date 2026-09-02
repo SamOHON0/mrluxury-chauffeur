@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { WhatsappLogo, MapPin } from "@phosphor-icons/react";
-import { FLAT_ROUTES, HOURLY, FARE_NOTE, type RateMode } from "@/lib/pricing";
+import { FLAT_ROUTES, HOURLY, FARE_NOTE, VEHICLES, type RateMode } from "@/lib/pricing";
 import { whatsappLink } from "@/lib/site";
 import LocationInput from "@/components/LocationInput";
 
@@ -26,6 +26,9 @@ export default function BookingWidget() {
   const [hours, setHours] = useState(HOURLY.minimumHours);
   const [routeId, setRouteId] = useState<string>(FLAT_ROUTES[0].id);
   const [passengers, setPassengers] = useState(1);
+  const [vehicleId, setVehicleId] = useState(VEHICLES[0].id);
+
+  const vehicle = VEHICLES.find((v) => v.id === vehicleId) ?? VEHICLES[0];
 
   // Map only updates when the user commits a field (blur), not per keystroke
   const [mapFrom, setMapFrom] = useState("");
@@ -59,10 +62,10 @@ export default function BookingWidget() {
   const summary = useMemo(() => {
     const journey =
       mode === "flat" ? route?.label : `${pickup || "?"} to ${dropoff || "?"}`;
-    const core = `Booking request: ${journey} on ${date || "?"} at ${time || "?"}, ${passengers} passenger(s)`;
+    const core = `Booking request: ${journey} on ${date || "?"} at ${time || "?"}, ${passengers} passenger(s), ${vehicle.name}`;
     const extra = mode === "hourly" ? `, ${hours}h hourly hire` : "";
     return `${core}${extra}. Name: ${name || "?"}`;
-  }, [mode, route, pickup, dropoff, date, time, passengers, hours, name]);
+  }, [mode, route, pickup, dropoff, date, time, passengers, hours, name, vehicle]);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -73,7 +76,7 @@ export default function BookingWidget() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           mode, date, time, pickup, dropoff, hours, routeId,
-          passengers, name, email, phone, notes,
+          passengers, vehicle: vehicle.name, name, email, phone, notes,
         }),
       });
       if (!res.ok) throw new Error("Request failed");
@@ -185,10 +188,24 @@ export default function BookingWidget() {
           )}
 
           <div>
+            <label htmlFor="bk-vehicle" className={labelCls}>Vehicle</label>
+            <select id="bk-vehicle" value={vehicleId}
+              onChange={(e) => {
+                const v = VEHICLES.find((x) => x.id === e.target.value);
+                setVehicleId(e.target.value);
+                if (v && passengers > v.passengers) setPassengers(v.passengers);
+              }}
+              className={inputCls}>
+              {VEHICLES.map((v) => (
+                <option key={v.id} value={v.id}>{v.name}</option>
+              ))}
+            </select>
+          </div>
+          <div>
             <label htmlFor="bk-pax" className={labelCls}>Passengers</label>
             <select id="bk-pax" value={passengers}
               onChange={(e) => setPassengers(Number(e.target.value))} className={inputCls}>
-              {[1, 2, 3, 4].map((n) => (
+              {Array.from({ length: vehicle.passengers }, (_, i) => i + 1).map((n) => (
                 <option key={n} value={n}>{n}</option>
               ))}
             </select>
@@ -272,17 +289,19 @@ export default function BookingWidget() {
           referrerPolicy="no-referrer-when-downgrade"
         />
         <div className="flex items-center gap-4 border-t border-white/5 px-5 py-4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/studio-side.jpeg"
-            alt="Mercedes-Benz EQS SUV"
-            className="h-12 w-20 rounded-lg object-cover"
-          />
+          {vehicle.image && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={vehicle.image}
+              alt={vehicle.name}
+              className="h-12 w-20 rounded-lg object-cover"
+            />
+          )}
           <div>
-            <p className="text-sm font-semibold text-ink-100">
-              Mercedes-Benz EQS SUV
+            <p className="text-sm font-semibold text-ink-100">{vehicle.name}</p>
+            <p className="text-xs text-ink-400">
+              {vehicle.note}, seats {vehicle.passengers}
             </p>
-            <p className="text-xs text-ink-400">Fully electric, seats 4</p>
           </div>
         </div>
         <p className="border-t border-white/5 px-5 py-3 text-xs text-ink-400">

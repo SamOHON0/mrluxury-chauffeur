@@ -119,7 +119,7 @@ export default function Home() {
               Wherever you need to be
             </h2>
             <p className="mt-3 max-w-lg text-ink-400">
-              One car, one chauffeur, every kind of journey.
+              Four cars, one standard, every kind of journey.
             </p>
           </Reveal>
 

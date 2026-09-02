@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function FleetPage() {
   const eqs = VEHICLES[0];
+  const others = VEHICLES.slice(1);
 
   return (
     <div className="pb-24 pt-32">
@@ -21,8 +22,8 @@ export default function FleetPage() {
             The <span className="text-gold-500">fleet</span>
           </h1>
           <p className="mt-4 max-w-lg text-ink-400">
-            One vehicle, chosen deliberately. {eqs.note}, seating{" "}
-            {eqs.passengers} with room for {eqs.luggage} cases.
+            Four vehicles, one standard. Led by the {eqs.note.toLowerCase()},
+            the {eqs.name}.
           </p>
         </Reveal>
 
@@ -98,6 +99,48 @@ export default function FleetPage() {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        {/* The rest of the fleet. Photo slots activate when client photos arrive. */}
+        <div className="mt-24 border-t border-white/10 pt-16">
+          <Reveal>
+            <h2 className="font-display text-3xl text-ink-100">
+              Also in the garage
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {others.map((v, i) => (
+              <Reveal key={v.id} delay={i * 0.06}>
+                <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-ink-900">
+                  {v.image && (
+                    <div className="relative aspect-[16/10]">
+                      <Image
+                        src={v.image}
+                        alt={v.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 400px"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="flex flex-1 flex-col p-7">
+                    <p className="text-xs font-semibold text-gold-500">
+                      {v.note}
+                    </p>
+                    <h3 className="font-display mt-2 text-2xl text-ink-100">
+                      {v.name}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-400">
+                      {v.body}
+                    </p>
+                    <p className="mt-5 border-t border-white/5 pt-4 text-xs text-ink-400">
+                      Seats {v.passengers}, room for {v.luggage} cases
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
 
         <Reveal className="mt-16 text-center">

@@ -14,6 +14,7 @@ type QuotePayload = {
   hours?: number;
   routeId?: string;
   passengers: number;
+  vehicle?: string;
   name: string;
   email: string;
   phone: string;
@@ -46,6 +47,7 @@ export async function POST(req: Request) {
     payload.mode !== "flat" ? `To: ${payload.dropoff ?? "-"}` : ``,
     payload.mode === "hourly" ? `Hours: ${payload.hours}` : ``,
     `Passengers: ${payload.passengers}`,
+    payload.vehicle ? `Vehicle: ${payload.vehicle}` : ``,
     payload.estimate ? `Estimated fare: EUR ${payload.estimate}` : `Fare: to be quoted`,
     ``,
     `Name: ${payload.name}`,

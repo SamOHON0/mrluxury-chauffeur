@@ -4,15 +4,54 @@
 
 export type RateMode = "distance" | "hourly" | "flat";
 
-export const VEHICLES = [
+export type Vehicle = {
+  id: string;
+  name: string;
+  passengers: number;
+  luggage: number;
+  note: string;
+  body: string;
+  image: string | null;
+};
+
+export const VEHICLES: Vehicle[] = [
   {
     id: "eqs-suv",
     name: "Mercedes-Benz EQS SUV",
     passengers: 4,
     luggage: 4,
     note: "Fully electric flagship",
+    body: "The headline act. Fully electric, whisper quiet and finished in cream Nappa leather.",
+    image: "/images/studio-side.jpeg",
   },
-] as const;
+  {
+    id: "s-class",
+    name: "Mercedes-Benz S-Class",
+    passengers: 3,
+    luggage: 2,
+    note: "The flagship saloon",
+    body: "The benchmark for rear-seat comfort. For clients who expect the best and notice the difference.",
+    image: "/images/s-class.jpeg",
+  },
+  {
+    id: "e-class",
+    name: "Mercedes-Benz E-Class",
+    passengers: 3,
+    luggage: 2,
+    note: "The executive saloon",
+    body: "Quietly capable and endlessly composed. The right choice for airport runs and daily business travel.",
+    image: "/images/e-class.jpeg",
+  },
+  {
+    id: "v-class",
+    name: "Mercedes-Benz V-Class",
+    passengers: 7,
+    luggage: 6,
+    note: "Luxury for groups",
+    body: "Seven seats and luggage to match, without giving up an inch of comfort. Families, golf trips and executive groups.",
+    image: "/images/v-class.jpeg",
+  },
+];
 
 export const HOURLY = {
   minimumHours: 2,
