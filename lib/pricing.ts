@@ -11,6 +11,7 @@ export type Vehicle = {
   luggage: number;
   note: string;
   body: string;
+  idealFor: string[];
   image: string | null;
 };
 
@@ -22,6 +23,7 @@ export const VEHICLES: Vehicle[] = [
     luggage: 4,
     note: "Fully electric flagship",
     body: "The headline act. Fully electric, whisper quiet and finished in cream Nappa leather.",
+    idealFor: ["Airport transfers", "Corporate travel", "Private tours"],
     image: "/images/studio-side.jpeg",
   },
   {
@@ -31,6 +33,7 @@ export const VEHICLES: Vehicle[] = [
     luggage: 2,
     note: "The flagship saloon",
     body: "The benchmark for rear-seat comfort. For clients who expect the best and notice the difference.",
+    idealFor: ["VIP transfers", "Weddings", "Executive travel"],
     image: "/images/s-class.jpeg",
   },
   {
@@ -40,6 +43,7 @@ export const VEHICLES: Vehicle[] = [
     luggage: 2,
     note: "The executive saloon",
     body: "Quietly capable and endlessly composed. The right choice for airport runs and daily business travel.",
+    idealFor: ["Airport transfers", "Business travel", "Point to point"],
     image: "/images/e-class.jpeg",
   },
   {
@@ -49,6 +53,7 @@ export const VEHICLES: Vehicle[] = [
     luggage: 6,
     note: "Luxury for groups",
     body: "Seven seats and luggage to match, without giving up an inch of comfort. Families, golf trips and executive groups.",
+    idealFor: ["Groups", "Golf trips", "Family travel"],
     image: "/images/v-class.jpeg",
   },
 ];
