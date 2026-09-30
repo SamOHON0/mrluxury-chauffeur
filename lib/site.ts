@@ -4,7 +4,7 @@ export const SITE = {
   phone: "+353 89 613 8243",
   phoneHref: "tel:+353896138243",
   whatsapp: "353896138243",
-  email: "m.rahmann198929@gmail.com",
+  email: "info@mrluxurychauffeur.com",
   city: "Dublin, Ireland",
 };
 

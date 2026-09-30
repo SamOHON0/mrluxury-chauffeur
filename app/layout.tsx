@@ -39,7 +39,7 @@ const jsonLd = {
     "Private chauffeur service in Dublin in a fully electric Mercedes-Benz EQS SUV. Airport transfers, corporate travel, weddings and private tours of Ireland.",
   url: "https://www.mrluxurychauffeur.com",
   telephone: "+353896138243",
-  email: "m.rahmann198929@gmail.com",
+  email: "info@mrluxurychauffeur.com",
   image: "https://www.mrluxurychauffeur.com/images/hero.jpeg",
   address: {
     "@type": "PostalAddress",
