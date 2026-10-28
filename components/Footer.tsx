@@ -44,6 +44,15 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/5 py-5 text-center text-xs text-ink-400">
         {new Date().getFullYear()} MR Luxury Chauffeur. All rights reserved.
+        {" · "}Site by{" "}
+        <a
+          href="https://squaretwo.ie"
+          target="_blank"
+          rel="noopener"
+          className="hover:text-gold-400"
+        >
+          SquareTwo
+        </a>
       </div>
     </footer>
   );
