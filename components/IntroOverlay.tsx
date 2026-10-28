@@ -49,7 +49,7 @@ export default function IntroOverlay() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="font-display text-3xl tracking-wide text-ink-100 md:text-4xl">
-              MR <span className="text-gold-500">Luxury</span> Chauffeur
+              Mr <span className="text-gold-500">Luxury</span> Chauffeur
             </p>
             <motion.div
               className="mx-auto mt-4 h-px bg-gold-500"

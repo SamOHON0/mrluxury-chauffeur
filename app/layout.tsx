@@ -19,11 +19,11 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "MR Luxury Chauffeur | Private Chauffeur Service in Dublin",
+  title: "Mr Luxury Chauffeur | Private Chauffeur Service in Dublin",
   description:
     "First-class chauffeur travel in Dublin in a fully electric Mercedes-Benz EQS SUV. Airport transfers, corporate travel, weddings and private tours of Ireland.",
   openGraph: {
-    title: "MR Luxury Chauffeur",
+    title: "Mr Luxury Chauffeur",
     description:
       "Private chauffeur service in Dublin. Fully electric Mercedes-Benz EQS SUV.",
     locale: "en_IE",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "MR Luxury Chauffeur",
+  name: "Mr Luxury Chauffeur",
   description:
     "Private chauffeur service in Dublin in a fully electric Mercedes-Benz EQS SUV. Airport transfers, corporate travel, weddings and private tours of Ireland.",
   url: "https://www.mrluxurychauffeur.com",

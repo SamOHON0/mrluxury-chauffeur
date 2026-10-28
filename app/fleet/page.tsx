@@ -6,9 +6,9 @@ import Reveal from "@/components/Reveal";
 import { VEHICLES } from "@/lib/pricing";
 
 export const metadata: Metadata = {
-  title: "Fleet | MR Luxury Chauffeur",
+  title: "Fleet | Mr Luxury Chauffeur",
   description:
-    "The MR Luxury fleet: Mercedes-Benz EQS SUV, S-Class, E-Class and V-Class, each finished to first-class standard and driven by a professional chauffeur.",
+    "The Mr Luxury fleet: Mercedes-Benz EQS SUV, S-Class, E-Class and V-Class, each finished to first-class standard and driven by a professional chauffeur.",
 };
 
 /* The lead vehicle is shown with the wider showroom photograph;

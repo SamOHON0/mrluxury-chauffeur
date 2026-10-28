@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-3 md:px-8">
         <div>
           <p className="font-display text-lg text-ink-100">
-            MR <span className="text-gold-500">Luxury</span> Chauffeur
+            Mr <span className="text-gold-500">Luxury</span> Chauffeur
           </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-400">
             Private chauffeur service in Dublin. Fully electric, quietly
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/5 py-5 text-center text-xs text-ink-400">
-        {new Date().getFullYear()} MR Luxury Chauffeur. All rights reserved.
+        {new Date().getFullYear()} Mr Luxury Chauffeur. All rights reserved.
         {" · "}Site by{" "}
         <a
           href="https://squaretwo.ie"

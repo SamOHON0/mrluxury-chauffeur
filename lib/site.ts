@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "MR Luxury Chauffeur",
+  name: "Mr Luxury Chauffeur",
   domain: "https://www.mrluxurychauffeur.com",
   phone: "+353 89 613 8243",
   phoneHref: "tel:+353896138243",

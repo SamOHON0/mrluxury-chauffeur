@@ -18,7 +18,7 @@ export default function Nav() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-ink-950/85 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-[72px] md:px-8">
         <Link href="/" className="font-display text-lg tracking-wide text-ink-100">
-          MR <span className="text-gold-500">Luxury</span> Chauffeur
+          Mr <span className="text-gold-500">Luxury</span> Chauffeur
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">

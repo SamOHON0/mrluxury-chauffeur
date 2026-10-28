@@ -4,7 +4,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Services | MR Luxury Chauffeur",
+  title: "Services | Mr Luxury Chauffeur",
   description:
     "Airport transfers, corporate travel, weddings, private tours of Ireland and hourly chauffeur hire in a fully electric Mercedes-Benz EQS SUV.",
 };

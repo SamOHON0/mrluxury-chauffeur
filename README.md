@@ -1,4 +1,4 @@
-# MR Luxury Chauffeur - Site Rebuild
+# Mr Luxury Chauffeur - Site Rebuild
 
 Premium chauffeur site for mrluxurychauffeur.com. Next.js 15 (App Router), Tailwind v4, Motion. Built to replace the Wix site, with a native booking engine modelled on blacktiechauffeur.ie.
 

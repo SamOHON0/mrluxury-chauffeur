@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand tokens: preserved from the existing MR Luxury identity (near-black + gold) */
+  /* Brand tokens: preserved from the existing Mr Luxury identity (near-black + gold) */
   --color-ink-950: #0c0c0e;
   --color-ink-900: #121215;
   --color-ink-800: #1a1a1f;

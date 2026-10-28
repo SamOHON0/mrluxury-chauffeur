@@ -4,8 +4,8 @@ import Reveal from "@/components/Reveal";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact | MR Luxury Chauffeur",
-  description: "Contact MR Luxury Chauffeur in Dublin by phone, WhatsApp or email.",
+  title: "Contact | Mr Luxury Chauffeur",
+  description: "Contact Mr Luxury Chauffeur in Dublin by phone, WhatsApp or email.",
 };
 
 export default function ContactPage() {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BookingWidget from "@/components/BookingWidget";
 
 export const metadata: Metadata = {
-  title: "Book Now | MR Luxury Chauffeur",
+  title: "Book Now | Mr Luxury Chauffeur",
   description:
     "Book a private chauffeur in Dublin. Distance, hourly or set-route pricing with instant estimates.",
 };

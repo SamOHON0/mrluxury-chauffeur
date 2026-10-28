@@ -72,7 +72,7 @@ export async function POST(req: Request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: `MR Luxury Website <${from}>`,
+      from: `Mr Luxury Website <${from}>`,
       to: [to],
       reply_to: payload.email,
       subject: `Booking request: ${payload.date} ${payload.time} (${payload.name})`,

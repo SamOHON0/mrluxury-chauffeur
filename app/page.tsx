@@ -56,7 +56,7 @@ export default function Home() {
         <div className="relative pt-16 md:hidden">
           <Image
             src={IMAGES.heroEqs}
-            alt="Mercedes-Benz EQS SUV, MR Luxury Chauffeur"
+            alt="Mercedes-Benz EQS SUV, Mr Luxury Chauffeur"
             width={1449}
             height={1085}
             priority
